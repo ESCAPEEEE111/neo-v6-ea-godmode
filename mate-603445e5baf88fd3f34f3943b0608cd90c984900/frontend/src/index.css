@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'JetBrains Mono', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #000000;
+    color: #00FF41;
+}
+
+code {
+    font-family: 'JetBrains Mono', source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
+}
+
+@layer base {
+  :root {
+        /* Matrix Theme Colors */
+        --matrix-green: #00FF41;
+        --matrix-bright-green: #00FF00;
+        --matrix-dark-green: #003B00;
+        --matrix-cyan: #00FFFF;
+        --matrix-blue: #0077BE;
+        --matrix-black: #000000;
+        --matrix-dark-grey: #0D0208;
+        
+        /* Updated CSS Variables for Matrix Theme */
+        --background: 0 0% 0%;
+        --foreground: 120 100% 63%;
+        --card: 0 0% 0%;
+        --card-foreground: 120 100% 63%;
+        --popover: 0 0% 0%;
+        --popover-foreground: 120 100% 63%;
+        --primary: 120 100% 50%;
+        --primary-foreground: 0 0% 0%;
+        --secondary: 120 100% 12%;
+        --secondary-foreground: 120 100% 63%;
+        --muted: 120 100% 12%;
+        --muted-foreground: 120 100% 40%;
+        --accent: 120 100% 12%;
+        --accent-foreground: 120 100% 63%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 120 100% 20%;
+        --input: 120 100% 20%;
+        --ring: 120 100% 50%;
+        --chart-1: 120 76% 61%;
+        --chart-2: 180 58% 39%;
+        --chart-3: 200 37% 24%;
+        --chart-4: 43 74% 66%;
+        --chart-5: 27 87% 67%;
+        --radius: 0.5rem;
+    }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    }
+  body {
+    @apply bg-background text-foreground;
+    }
+}
+
+/* Matrix-specific utility classes */
+@layer utilities {
+  .text-matrix-green {
+    color: #00FF41;
+  }
+  
+  .text-matrix-bright-green {
+    color: #00FF00;
+  }
+  
+  .text-matrix-dark-green {
+    color: #003B00;
+  }
+  
+  .text-matrix-cyan {
+    color: #00FFFF;
+  }
+  
+  .bg-matrix-green {
+    background-color: #00FF41;
+  }
+  
+  .bg-matrix-dark-green {
+    background-color: #003B00;
+  }
+  
+  .border-matrix-green {
+    border-color: #00FF41;
+  }
+  
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Matrix Rain Animation Enhancement */
+@keyframes matrix-glow {
+  0%, 100% {
+    text-shadow: 0 0 5px #00FF41;
+  }
+  50% {
+    text-shadow: 0 0 20px #00FF41, 0 0 30px #00FF41;
+  }
+}
+
+.matrix-glow {
+  animation: matrix-glow 2s ease-in-out infinite;
+}
+
+/* Terminal-like effects */
+.terminal-cursor::after {
+  content: '|';
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Hover effects for Matrix theme */
+.matrix-hover:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+/* Scrollbar customization for Matrix theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00FF41;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00FF00;
+}
