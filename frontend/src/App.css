@@ -1,0 +1,177 @@
+/* Matrix Theme App Styles */
+
+.App {
+  text-align: left;
+  background: #000000;
+  color: #00FF41;
+  min-height: 100vh;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+  filter: hue-rotate(120deg) brightness(1.2);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #000000;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #00FF41;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.App-link {
+  color: #00FFFF;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.App-link:hover {
+  color: #00FF41;
+  text-shadow: 0 0 10px #00FF41;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Matrix-specific animations */
+@keyframes matrix-text-flow {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+.matrix-text-animation {
+  animation: matrix-text-flow 3s ease-in-out infinite;
+}
+
+/* Global Matrix theme overrides */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #00FF41 #000000;
+}
+
+/* Selection color */
+::selection {
+  background-color: #00FF41;
+  color: #000000;
+}
+
+::-moz-selection {
+  background-color: #00FF41;
+  color: #000000;
+}
+
+/* Input field Matrix styling */
+input, textarea, select {
+  background-color: #000000 !important;
+  border: 1px solid #00FF41 !important;
+  color: #00FF41 !important;
+  font-family: 'JetBrains Mono', monospace !important;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #00FF00 !important;
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.3) !important;
+  outline: none !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #003B00 !important;
+}
+
+/* Button Matrix styling */
+button {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  transition: all 0.3s ease !important;
+}
+
+button:hover {
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.4) !important;
+}
+
+/* Link styling */
+a {
+  color: #00FFFF;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #00FF41;
+  text-shadow: 0 0 5px #00FF41;
+}
+
+/* Card and container styling */
+.matrix-card {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid #00FF41;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.matrix-card:hover {
+  border-color: #00FF00;
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Matrix grid pattern background */
+.matrix-grid {
+  background-image: 
+    linear-gradient(rgba(0, 255, 65, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 65, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Text glow effects */
+.matrix-glow-text {
+  text-shadow: 0 0 10px #00FF41;
+}
+
+.matrix-bright-glow-text {
+  text-shadow: 0 0 15px #00FF00, 0 0 25px #00FF00;
+}
+
+/* Loading animation */
+@keyframes matrix-loading {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.matrix-loading {
+  animation: matrix-loading 1.5s ease-in-out infinite;
+}
