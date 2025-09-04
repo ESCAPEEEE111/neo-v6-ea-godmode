@@ -1,8 +1,28 @@
-from emergentintegrations.llm.chat import LlmChat, UserMessage
+# from emergentintegrations.llm.chat import LlmChat, UserMessage
 from config import settings
 import logging
 from typing import Dict, Any, Optional
 import asyncio
+
+# Mocking the emergentintegrations module
+class UserMessage:
+    def __init__(self, text):
+        self.text = text
+
+class LlmChat:
+    def __init__(self, api_key, session_id, system_message):
+        self.api_key = api_key
+        self.session_id = session_id
+        self.system_message = system_message
+
+    def with_model(self, provider, model):
+        pass
+
+    def with_max_tokens(self, tokens):
+        pass
+
+    async def send_message(self, user_message):
+        return "This is a mocked response from the AI service."
 
 logger = logging.getLogger(__name__)
 
